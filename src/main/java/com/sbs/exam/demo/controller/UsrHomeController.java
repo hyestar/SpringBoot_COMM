@@ -1,0 +1,16 @@
+package com.sbs.exam.demo.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class UsrHomeController {
+//  @RequestMapping을 통해 요청을 받고
+	@RequestMapping("/usr/home/main")
+//	@@ResponseBody를 통해 실행
+	@ResponseBody
+	public String showMain() {
+		return "안녕하세요";
+	}
+}
