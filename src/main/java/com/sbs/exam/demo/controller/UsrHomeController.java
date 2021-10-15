@@ -6,7 +6,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class UsrHomeController {
-
+//	객체가 죽지 않는한 계속 살아있을 수 있도록 전역, 지역변수 활용하기
+//	이안에서만 활용한다고 하면 private
+//	private int cnt = -1;
+	
+	private int cnt;
+//	생성자 활용이 더 좋은 방법임
+	UsrHomeController(){
+		cnt = -1;
+	}
+	
 //  @RequestMapping을 통해 요청을 받고
 	@RequestMapping("/usr/home/main")
 //	@@ResponseBody를 통해 실행
@@ -25,5 +34,11 @@ public class UsrHomeController {
 	public String showMain3(){
 		return "잘가";
 	}
-
+	
+	@RequestMapping("/usr/home/main4")
+	@ResponseBody
+	public int showMain4(){
+		cnt++;
+		return cnt;
+	}
 }
