@@ -41,4 +41,10 @@ public class UsrHomeController {
 		cnt++;
 		return cnt;
 	}
+	@RequestMapping("/usr/home/main5")
+	@ResponseBody
+	public String showMain5(){
+		cnt=0;
+		return "count값이 초기화 되었습니다.";
+	}
 }
