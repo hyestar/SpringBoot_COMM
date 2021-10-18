@@ -47,4 +47,16 @@ public class UsrHomeController {
 		cnt=0;
 		return "count값이 초기화 되었습니다.";
 	}
+	@RequestMapping("/usr/home/getCount")
+	@ResponseBody
+	public int getCount(){
+		cnt++;
+		return cnt;
+	}
+	@RequestMapping("/usr/home/doSetCount")
+	@ResponseBody
+	public String doSetCount(int cnt){
+		this.cnt = cnt;
+		return "Count값이 "+ this.cnt + "으로 초기화 되었습니다.";
+	}
 }
