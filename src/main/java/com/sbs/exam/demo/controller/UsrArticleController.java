@@ -98,5 +98,18 @@ public class UsrArticleController {
 	public List<Article> getArticles() {
 		return articles;
 	}
+	
+	// 게시물 상세 보기
+	@RequestMapping("/usr/article/getArticle")
+	@ResponseBody
+	public Object getArticleAction(int id) {
+		Article article = getArticle(id);
+
+		if( article == null) {
+			return id + "번 게시물은 존재하지 않습니다.";
+		}
+
+		return article;
+	}
 	// 액션 메서드 끝
 }
