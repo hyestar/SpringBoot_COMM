@@ -3,15 +3,21 @@ package com.sbs.exam.demo.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.sbs.exam.demo.service.ArticleService;
 import com.sbs.exam.demo.vo.Article;
 
 @Controller
 public class UsrArticleController {
 	// 인스턴스 변수
+	
+	@Autowired
+	private ArticleService articleService; // 객체화 하지 않고 처리하는 법. 세션이나 new 사용해서 따로 안만들어도 됨.
+	
 	private int articleLastId;
 	private List<Article> articles;
 
